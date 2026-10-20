@@ -1,0 +1,6 @@
+# dsh-macos-signfix bundle patch: one host-only row (agent tool + system-prompt
+# section). Repairs macOS code-signing so the DSH built-in Python can load the
+# onnxruntime / cv2 / pypdfium2 native extensions used by dsh-ocr.
+- insert:
+    - id: dsh-macos-signfix
+      name: dsh-macos-signfix

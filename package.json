@@ -1,0 +1,36 @@
+{
+  "name": "dsh-macos-signfix",
+  "version": "0.1.0",
+  "description": "macOS code-signing repair for DeepSeek Harness: one doc_ocr_sign_fix tool that diagnoses and fixes the condition where the bundled Python cannot load native extensions (onnxruntime, cv2, pypdfium2) because of hardened runtime and library validation, by injecting the disable-library-validation entitlement and re-signing the interpreter, then verifying the imports. Never touches the enclosing app.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "runner.js",
+    "core/",
+    "sign/",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zirscard/dsh-macos-signfix.git"
+  },
+  "homepage": "https://github.com/zirscard/dsh-macos-signfix#readme",
+  "bugs": {
+    "url": "https://github.com/zirscard/dsh-macos-signfix/issues"
+  }
+}
